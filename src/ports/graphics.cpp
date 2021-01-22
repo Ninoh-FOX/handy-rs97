@@ -68,8 +68,6 @@
 #include "sdlemu/sdlemu_filter.h"
 #include "gui/gui.h"
 
-#include "shared_config.h"
-
 extern SDL_Joystick* joystick;
 extern SDL_Surface* menuSurface;
 
@@ -78,11 +76,9 @@ extern SDL_Surface* menuSurface;
     Name                :     handy_sdl_video_init
     Parameters          :     N/A
     Function            :   Initialisation of Handy/SDL graphics.
-
     Uses                :   mpLynxBuffer ( Handy core rendering buffer )
                             mpLynx Class ( Handy core )
                             HandyBuffer  ( Handy/SDL display buffer )
-
     Information            :    Creates the backbuffer for the Handy core based
                             upon rotation, format, etc.
 */
@@ -119,6 +115,8 @@ void handy_sdl_video_init(int bpp)
 
     printf("[DONE]\n");
 }
+
+#define SDL_FLAGS SDL_HWSURFACE
 
 /*
     This is called also from gui when initializing for rom browser
@@ -187,10 +185,8 @@ void Handy_Change_Res(uint8_t menu)
     Name                :     handy_sdl_display_callback
     Parameters          :     N/A
     Function            :   Handy/SDL display rendering function.
-
     Uses                :   HandyBuffer  ( Handy/SDL display buffer )
                             mainSurface     ( Handy/SDL primary display )
-
     Information            :    Renders the graphics from HandyBuffer to
                             the main surface.
 */
