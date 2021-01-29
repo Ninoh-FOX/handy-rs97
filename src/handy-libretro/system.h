@@ -63,7 +63,7 @@
 
 #include "machine.h"
 
-#define HANDY_SYSTEM_FREQ						14700000
+#define HANDY_SYSTEM_FREQ						16000000
 #define HANDY_TIMER_FREQ						20
 #define HANDY_AUDIO_WAVESHAPER_TABLE_LENGTH		0x200000
 
