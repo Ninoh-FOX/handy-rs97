@@ -169,6 +169,8 @@ void Handy_Change_Res(uint8_t menu)
 	else
 	{
 		if (mRotation == CART_NO_ROTATE) mainSurface = SDL_SetVideoMode(160, height_res, 16, SDL_FLAGS);
+		else if (mRotation == CART_ROTATE_LEFT) mainSurface = SDL_SetVideoMode(112, 160, 16, SDL_FLAGS);
+		else if (mRotation == CART_ROTATE_RIGHT) mainSurface = SDL_SetVideoMode(112, 160, 16, SDL_FLAGS);
 		else mainSurface = SDL_SetVideoMode(height_res, 160, 16, SDL_FLAGS);
 	}
 	
